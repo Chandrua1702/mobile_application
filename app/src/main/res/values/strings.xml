@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home Pro</string>
+
+    <string name="nav_header_title">Smart Control</string>
+    <string name="nav_header_subtitle">Connected Home</string>
+    <string name="nav_header_desc">Header image</string>
+    <string name="image_view_item_transform_content_description">Icon transform</string>
+    
+    <string name="menu_home">Home Dashboard</string>
+    <string name="menu_gallery">Device Gallery</string>
+    <string name="menu_slideshow">Auto Mode</string>
+</resources>

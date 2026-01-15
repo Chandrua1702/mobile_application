@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:padding="24dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/loginCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home Intelligence"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <EditText android:id="@+id/editUser" android:layout_width="match_parent" android:layout_height="50dp" android:hint="Username" android:background="@drawable/edit_text_rounded" android:paddingHorizontal="15dp" android:layout_marginBottom="10dp"/>
+            <EditText android:id="@+id/editPass" android:layout_width="match_parent" android:layout_height="50dp" android:hint="Password" android:inputType="textPassword" android:background="@drawable/edit_text_rounded" android:paddingHorizontal="15dp" android:layout_marginBottom="10dp"/>
+            <EditText android:id="@+id/editServer" android:layout_width="match_parent" android:layout_height="50dp" android:hint="MQTT IP:Port" android:background="@drawable/edit_text_rounded" android:paddingHorizontal="15dp" android:layout_marginBottom="20dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnConnect" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="Connect" android:layout_marginEnd="5dp"/>
+                <Button android:id="@+id/btnDisconnect" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="Disconnect" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </LinearLayout>
+
+            <TextView android:id="@+id/txtStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="10dp" android:text="Status: Disconnected"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/dashboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Device Dashboard" android:textSize="24sp" android:textStyle="bold" android:layout_marginBottom="20dp"/>
+
+        <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="2">
+            <include layout="@layout/item_device" android:id="@+id/relay1"/>
+            <include layout="@layout/item_device" android:id="@+id/relay2"/>
+            <include layout="@layout/item_device" android:id="@+id/relay3"/>
+            <include layout="@layout/item_device" android:id="@+id/relay4"/>
+        </GridLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Proceed to Dashboard"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/loginCard"
+        android:layout_marginTop="20dp"/>
+
+    <ProgressBar
+        android:id="@+id/loadingSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

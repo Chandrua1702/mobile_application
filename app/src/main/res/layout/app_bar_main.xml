@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/statusText"
+            android:text="MQTT: Disconnected"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/relay1"
+            android:text="Relay 1" />
+
+        <Button
+            android:id="@+id/relay2"
+            android:text="Relay 2" />
+
+        <Button
+            android:id="@+id/relay3"
+            android:text="Relay 3" />
+
+        <Button
+            android:id="@+id/relay4"
+            android:text="Relay 4" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
